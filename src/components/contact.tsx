@@ -2,7 +2,6 @@ import { motion } from "framer-motion";
 import { useLayoutEffect, useRef, useState } from "react";
 import {
   GoogleReCaptchaProvider,
-  useGoogleReCaptcha,
 } from "react-google-recaptcha-v3";
 import { toast } from "sonner";
 
@@ -28,7 +27,6 @@ const FIELD_VALIDATORS: Record<
 };
 
 const ContactForm = () => {
-  const { executeRecaptcha } = useGoogleReCaptcha();
   const formRef = useRef<HTMLFormElement | null>(null);
   const messageRef = useRef<HTMLTextAreaElement | null>(null);
   const hasAttemptedSubmit = useRef(false);
@@ -98,15 +96,9 @@ const ContactForm = () => {
 
     if (!validateForm()) return;
 
-    if (!executeRecaptcha) {
-      toast.error("reCAPTCHA is not ready. Please try again.");
-      return;
-    }
-
     setLoading(true);
 
     try {
-      const recaptchaToken = await executeRecaptcha(CONTACT_RECAPTCHA_ACTION);
 
       const response = await fetch("/api/contact", {
         method: "POST",
@@ -117,7 +109,6 @@ const ContactForm = () => {
           name: form.name,
           email: form.email,
           message: form.message,
-          recaptchaToken,
         }),
       });
 
@@ -238,7 +229,7 @@ const ContactForm = () => {
         {loading ? "Sending..." : "Send"}
       </button>
       <p className="mt-3 text-xs text-secondary/70">
-        This site is protected by reCAPTCHA.
+        Feel free to reach out to me!
       </p>
     </form>
   );
@@ -257,15 +248,7 @@ export const Contact = () => {
           <p className={styles.sectionSubText}>Get in touch</p>
           <h3 className={styles.sectionHeadText}>Contact.</h3>
 
-          {siteKey ? (
-            <GoogleReCaptchaProvider reCaptchaKey={siteKey}>
-              <ContactForm />
-            </GoogleReCaptchaProvider>
-          ) : (
-            <p className="mt-12 text-secondary">
-              Contact form is currently unavailable.
-            </p>
-          )}
+          <ContactForm />
         </motion.div>
 
         <motion.div

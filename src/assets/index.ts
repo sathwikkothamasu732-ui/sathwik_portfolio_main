@@ -25,6 +25,13 @@ import tailwind from "./tech/tailwind.png";
 import threejs from "./tech/threejs.svg";
 import typescript from "./tech/typescript.png";
 
+import premiere from "./tech/premiere.png";
+import aftereffects from "./tech/aftereffects.png";
+import photoshop from "./tech/photoshop.png";
+import ai from "./tech/ai.png";
+import storytelling from "./tech/storytelling.png";
+import avid from "./tech/avid.png";
+
 import meta from "./company/meta.png";
 import shopify from "./company/shopify.png";
 import starbucks from "./company/starbucks.png";
@@ -69,6 +76,12 @@ export {
   tailwind,
   typescript,
   threejs,
+  premiere,
+  aftereffects,
+  photoshop,
+  ai,
+  storytelling,
+  avid,
   meta,
   shopify,
   starbucks,

@@ -48,12 +48,17 @@ export const Tech = () => {
         className="flex flex-row flex-wrap justify-center gap-10"
       >
         {TECHNOLOGIES.map((technology) => (
-          <div className="w-28 h-28" key={technology.name}>
-            {use3DBalls ? (
-              <BallCanvas icon={technology.icon} />
-            ) : (
-              <TechBall name={technology.name} icon={technology.icon} />
-            )}
+          <div className="flex flex-col items-center gap-2 w-32" key={technology.name}>
+            <div className="w-28 h-28">
+              {use3DBalls ? (
+                <BallCanvas icon={technology.icon} />
+              ) : (
+                <TechBall name={technology.name} icon={technology.icon} />
+              )}
+            </div>
+            <p className="text-secondary text-[14px] font-semibold text-center leading-tight">
+              {technology.name}
+            </p>
           </div>
         ))}
       </div>

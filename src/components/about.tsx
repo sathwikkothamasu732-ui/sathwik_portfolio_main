@@ -54,11 +54,10 @@ export const About = () => {
           variants={fadeIn(undefined, undefined, 0.1, 1)}
           className="empty-4 text-secondary text-[17px] max-w-3xl leading-[30px]"
         >
-          I'm a skilled website developer with experience in TypeScript and
-          Javascript, and expertise in frameworks like React, Node.js, and
-          Three.js. I'm a quick learner and collaborate closely with clients to
-          create efficient, scalable, and user-friendly solutions that solve
-          real-world problems. Let's work together to bring your ideas to life!
+          I'm a creative and detail-oriented Video Editor and Motion Graphics Designer
+          with experience in creating corporate video content and motion graphics.
+          Skilled in Adobe Premiere Pro, After Effects, and AI-powered content creation,
+          with an academic background in Civil Engineering and Architecture. Let's work together!
         </motion.p>
 
         {/* Service Card */}

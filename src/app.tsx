@@ -20,7 +20,6 @@ const App = () => {
 
   return (
     <BrowserRouter>
-      <Banner hide={hide} setHide={setHide} />
       <div className="relative z-0 bg-primary">
         <div className="bg-hero-pattern bg-cover bg-no-repeat bg-center">
           <Navbar hide={hide} />
@@ -29,8 +28,6 @@ const App = () => {
         <About />
         <Experience />
         <Tech />
-        <Works />
-        <Feedbacks />
 
         {/* Contact */}
         <div className="relative z-0">
