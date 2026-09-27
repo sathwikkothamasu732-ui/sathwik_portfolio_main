@@ -88,6 +88,7 @@ Here is the folder structure of this app.
   |- .gitignore
   |- index.html
   |- netlify.toml
+  |- package-lock.json
   |- package.json
   |- pnpm-lock.yaml
   |- pnpm-workspace.yaml
