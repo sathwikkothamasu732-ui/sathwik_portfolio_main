@@ -61,11 +61,6 @@ export const NAV_LINKS = [
     title: "Contact",
     link: null,
   },
-  {
-    id: "source-code",
-    title: "Source Code",
-    link: "http://www.github.com/sanidhyy/3d-portfolio",
-  },
 ] as const;
 
 // Services
@@ -136,7 +131,7 @@ export const EXPERIENCES = [
 export const TESTIMONIALS = [
   {
     testimonial:
-      "I thought it was impossible to make a website as beautiful as our product, but Rick proved me wrong.",
+      "I thought it was impossible to make a website as beautiful as our product, but Venkat proved me wrong.",
     name: "Sara Lee",
     designation: "CFO",
     company: "Acme Co",
@@ -144,7 +139,7 @@ export const TESTIMONIALS = [
   },
   {
     testimonial:
-      "I've never met a web developer who truly cares about their clients' success like Rick does.",
+      "I've never met a web developer who truly cares about their clients' success like Venkat does.",
     name: "Chris Brown",
     designation: "COO",
     company: "DEF Corp",
@@ -152,7 +147,7 @@ export const TESTIMONIALS = [
   },
   {
     testimonial:
-      "After Rick optimized our website, our traffic increased by 50%. We can't thank them enough!",
+      "After Venkat optimized our website, our traffic increased by 50%. We can't thank them enough!",
     name: "Lisa Wang",
     designation: "CTO",
     company: "456 Enterprises",
@@ -311,10 +306,5 @@ export const SOCIALS = [
     name: "Twitter",
     icon: twitter,
     link: "https://x.com/_sanidhyy",
-  },
-  {
-    name: "GitHub",
-    icon: github,
-    link: "https://github.com/sanidhyy",
   },
 ] as const;

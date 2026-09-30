@@ -8,6 +8,7 @@ import { SectionWrapper } from "../hoc";
 import { styles } from "../styles";
 import { cn } from "../utils/lib";
 import { fadeIn, textVariant } from "../utils/motion";
+import { BorderBeam } from "border-beam";
 
 type ProjectCardProps = (typeof PROJECTS)[number] & {
   index: number;
@@ -87,21 +88,23 @@ const ProjectCard = ({
 
   return (
     <motion.div variants={fadeIn("up", "spring", index * 0.5, 0.75)}>
-      {enableTilt ? (
-        <Tilt
-          options={{
-            max: 45,
-            scale: 1,
-            speed: 450,
-            gyroscope: false,
-          }}
-          className={cardClassName}
-        >
-          {content}
-        </Tilt>
-      ) : (
-        <div className={cardClassName}>{content}</div>
-      )}
+      <BorderBeam size="md" colorVariant="colorful" strength={0.7} className="rounded-2xl">
+        {enableTilt ? (
+          <Tilt
+            options={{
+              max: 45,
+              scale: 1,
+              speed: 450,
+              gyroscope: false,
+            }}
+            className={cardClassName}
+          >
+            {content}
+          </Tilt>
+        ) : (
+          <div className={cardClassName}>{content}</div>
+        )}
+      </BorderBeam>
     </motion.div>
   );
 };
