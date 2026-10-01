@@ -176,7 +176,7 @@ export const PROJECTS = [
       },
     ],
     image: project1,
-    source_code_link: "https://github.com/sanidhyy/disney-clone",
+    source_code_link: "https://github.com/venkatsathwik/disney-clone",
     live_site_link: "https://clonedisneyplus.web.app",
   },
   {
@@ -198,7 +198,7 @@ export const PROJECTS = [
       },
     ],
     image: project2,
-    source_code_link: "https://github.com/sanidhyy/fitness-app",
+    source_code_link: "https://github.com/venkatsathwik/fitness-app",
     live_site_link: "https://fitness-gym-react.netlify.app",
   },
   {
@@ -220,7 +220,7 @@ export const PROJECTS = [
       },
     ],
     image: project3,
-    source_code_link: "https://github.com/sanidhyy/admin-dashboard",
+    source_code_link: "https://github.com/venkatsathwik/admin-dashboard",
     live_site_link: "https://shoppy-dashboard-react.netlify.app",
   },
   {
@@ -242,7 +242,7 @@ export const PROJECTS = [
       },
     ],
     image: project4,
-    source_code_link: "https://github.com/sanidhyy/tiktok-clone",
+    source_code_link: "https://github.com/venkatsathwik/tiktok-clone",
     live_site_link: "https://tiktok-clone-react.vercel.app",
   },
   {
@@ -264,7 +264,7 @@ export const PROJECTS = [
       },
     ],
     image: project5,
-    source_code_link: "https://github.com/sanidhyy/crypto-app",
+    source_code_link: "https://github.com/venkatsathwik/crypto-app",
     live_site_link: "https://reactjscryptoapp.netlify.app",
   },
   {
@@ -286,7 +286,7 @@ export const PROJECTS = [
       },
     ],
     image: project6,
-    source_code_link: "https://github.com/sanidhyy/travel-advisor",
+    source_code_link: "https://github.com/venkatsathwik/travel-advisor",
     live_site_link: "https://travel-advisor-reactjs.netlify.app",
   },
 ] as const;
