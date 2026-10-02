@@ -12,6 +12,7 @@ import {
   isValidContactEmail,
   isValidContactMessage,
   isValidContactName,
+  isValidContactCompany,
   type ContactFormFields,
 } from "../lib/contact";
 import { styles } from "../styles";
@@ -22,6 +23,7 @@ const FIELD_VALIDATORS: Record<
   (value: string) => boolean
 > = {
   name: isValidContactName,
+  company: isValidContactCompany,
   email: isValidContactEmail,
   message: isValidContactMessage,
 };
@@ -32,11 +34,13 @@ const ContactForm = () => {
   const hasAttemptedSubmit = useRef(false);
   const [form, setForm] = useState<ContactFormFields>({
     name: "",
+    company: "",
     email: "",
     message: "",
   });
   const [fieldErrors, setFieldErrors] = useState({
     name: false,
+    company: false,
     email: false,
     message: false,
   });
@@ -82,13 +86,14 @@ const ContactForm = () => {
 
     const nextErrors = {
       name: !isValidContactName(form.name),
+      company: !isValidContactCompany(form.company),
       email: !isValidContactEmail(form.email),
       message: !isValidContactMessage(form.message),
     };
 
     setFieldErrors(nextErrors);
 
-    return !nextErrors.name && !nextErrors.email && !nextErrors.message;
+    return !nextErrors.name && !nextErrors.company && !nextErrors.email && !nextErrors.message;
   };
 
   const handleSubmit = async (e: React.SubmitEvent<HTMLFormElement>) => {
@@ -100,13 +105,14 @@ const ContactForm = () => {
 
     try {
 
-      const response = await fetch("/api/contact", {
+      const response = await fetch("https://hook.eu1.make.com/88rn93q2vziln429upfsvv8hpw9lvc6d", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
         },
         body: JSON.stringify({
           name: form.name,
+          company: form.company,
           email: form.email,
           message: form.message,
         }),
@@ -124,11 +130,13 @@ const ContactForm = () => {
       toast.success("Thanks for contacting me.");
       setForm({
         name: "",
+        company: "",
         email: "",
         message: "",
       });
       setFieldErrors({
         name: false,
+        company: false,
         email: false,
         message: false,
       });
@@ -170,6 +178,30 @@ const ContactForm = () => {
         </span>
       </label>
 
+      <label htmlFor="company" className="flex flex-col">
+        <span className="text-white font-medium mb-4">Your Company</span>
+        <input
+          type="text"
+          name="company"
+          id="company"
+          value={form.company}
+          onChange={handleChange}
+          placeholder="Acme Corp"
+          title="What's your company?"
+          maxLength={200}
+          disabled={loading}
+          aria-disabled={loading}
+          className="bg-tertiary py-4 px-6 placeholder:text-secondary text-white rounded-lg outline-hidden border-none font-medium disabled:bg-tertiary/20 disabled:text-white/60"
+        />
+
+        <span
+          className={`text-red-400 mt-2 ${fieldErrors.company ? "" : "hidden"}`}
+          id="company-error"
+        >
+          Invalid Company!
+        </span>
+      </label>
+
       <label htmlFor="email" className="flex flex-col">
         <span className="text-white font-medium mb-4">Your Email*</span>
         <input
@@ -203,7 +235,7 @@ const ContactForm = () => {
           id="message"
           value={form.message}
           onChange={handleChange}
-          placeholder="Hello there!"
+          placeholder="Message should be at least 5 characters long"
           title="What do you want to say?"
           maxLength={500}
           disabled={loading}

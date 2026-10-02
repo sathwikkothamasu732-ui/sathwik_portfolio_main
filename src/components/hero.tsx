@@ -29,6 +29,13 @@ export const Hero = () => {
             I edit videos and create <br className="sm:block hidden" />
             stunning motion graphics
           </p>
+          <a
+            href="/sathwik (1).pdf"
+            download="Venkat_Sathwik_Resume.pdf"
+            className="inline-block mt-6 bg-[#915eff] text-white py-3 px-8 rounded-xl font-bold shadow-md hover:bg-white hover:text-[#915eff] transition-colors"
+          >
+            Download Resume
+          </a>
         </div>
       </div>
 

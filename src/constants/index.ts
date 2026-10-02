@@ -36,6 +36,7 @@ import {
   linkedin,
   twitter,
   github,
+  gmail,
   premiere,
   aftereffects,
   photoshop,
@@ -291,4 +292,20 @@ export const PROJECTS = [
   },
 ] as const;
 
-export const SOCIALS = [] as const;
+export const SOCIALS = [
+  {
+    name: "Github",
+    icon: github,
+    link: "https://github.com/sathwikkothamasu732-ui",
+  },
+  {
+    name: "LinkedIn",
+    icon: linkedin,
+    link: "https://www.linkedin.com/in/kothamasu-venkat-sathwik/",
+  },
+  {
+    name: "Gmail",
+    icon: gmail,
+    link: "mailto:sathwikkothamasu732@gmail.com",
+  },
+] as const;

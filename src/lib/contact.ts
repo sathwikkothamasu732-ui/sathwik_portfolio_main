@@ -8,6 +8,7 @@ export const EMAIL_REGEX =
 export type ContactFormFields = {
   name: string;
   email: string;
+  company: string;
   message: string;
 };
 
@@ -19,6 +20,11 @@ export type ContactFormError =
 export const isValidContactName = (name: string): boolean => {
   const trimmed = name.trim();
   return trimmed.length >= 3 && trimmed.length <= 200;
+};
+
+export const isValidContactCompany = (company: string): boolean => {
+  const trimmed = company.trim();
+  return trimmed.length <= 200;
 };
 
 export const isValidContactEmail = (email: string): boolean => {
